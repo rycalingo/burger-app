@@ -1,0 +1,31 @@
+
+
+.container {
+    margin: 40px auto;
+}
+.heading, .main-section {
+    width: 900px;
+    margin: 10px auto;
+
+}
+.heading { text-align: center; }
+.burger-img {
+    background: url('../img/eat-a-burger.jpg') center / 230% auto no-repeat;
+    width: 133px;
+    height: 150px;
+    margin: 10px auto;
+    border-radius: 35px;
+}
+
+.create-form {
+    width: 372px;
+    margin: 30px auto 10px;
+    text-align: center;
+
+}
+#submit {
+    justify-content: center;
+    width: 90px;
+    margin: 5px auto;
+    padding: auto 20px;
+}

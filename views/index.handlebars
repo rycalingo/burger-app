@@ -1,27 +1,30 @@
 <div class="container">
-    <div clas="heading">
-        <div class="image-frame">
-            <img src="img/eat-a-burger.jpg" width="640">
-        </div>
+    <div class="heading">
+        <div class="burger-img"></div>
         <h1 class="title">Eat a Yummy Burger!</h1>
     </div>
 
-    <div class="burger-list">
-        <ul>
-            {{#each burgers}}
-                {{#if sleepy}}
-                    {{> cats/cat-block sleep=false}}
-                {{/if}}
-            {{/each}}
-        </ul>
-    </div>
+    <div class="main-section">
 
-    <form class="create-form">
-        <div class="form-group">
-        <input type="text" id="burger-request" name="name">
+        <form class="create-form">
+            <div class="form-group">
+                <textarea id="burger-request" class="form-control" rows="4" cols="50"></textarea>
+            </div>
+
+            <button id="submit" type="submit" class="btn btn-info">Submit</button>
+            <p>Enter your favorit burger and click "Submit".</p>
+        </form>
+
+        <div class="burger-list">
+            <ul>
+                {{#each burgers}}
+                    {{#if sleepy}}
+                        {{> cats/cat-block sleep=false}}
+                    {{/if}}
+                {{/each}}
+            </ul>
         </div>
 
-        <button type="submit">Submit</button>
-    </form>
-    <p>Enter your favorit burger and click "Submit".</p>
+    </div>    
+
 </div>
