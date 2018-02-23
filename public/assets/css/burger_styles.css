@@ -3,12 +3,18 @@
 .container {
     margin: 40px auto;
 }
-.heading, .main-section {
+.header, .main-section {
     width: 900px;
     margin: 10px auto;
 
 }
-.heading { text-align: center; }
+
+.header {
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0px 5px 15px 3px rgba(115, 115, 115, 0.22)
+}
+
 .burger-img {
     background: url('../img/eat-a-burger.jpg') center / 230% auto no-repeat;
     width: 133px;
@@ -23,9 +29,40 @@
     text-align: center;
 
 }
+
+label { 
+    display: block;
+    font-weight: normal;
+}
+
 #submit {
-    justify-content: center;
-    width: 90px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
     margin: 5px auto;
-    padding: auto 20px;
+    padding: 10px 50px;
+}
+
+.display-area {
+    width: 800px;
+    margin: 40px auto 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.display-area ul {
+    width: 270px;
+}
+.display-area li.burger-item {
+    width: 100%;
+    margin: 15px 0;
+    padding: 10px 0;
+    list-style: none;
+    position: relative;
+    text-align: center;
+    background: rgb(224, 224, 224);
+}
+li.burger-item button {
+    position: absolute;
+    top: 3px;
+    right: -77%;
 }

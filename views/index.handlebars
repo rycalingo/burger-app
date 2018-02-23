@@ -1,7 +1,7 @@
 <div class="container">
-    <div class="heading">
+    <div class="header">
         <div class="burger-img"></div>
-        <h1 class="title">Eat a Yummy Burger!</h1>
+        <h1 class="title">Yummy Burger!</h1>
     </div>
 
     <div class="main-section">
@@ -9,20 +9,35 @@
         <form class="create-form">
             <div class="form-group">
                 <textarea id="burger-request" class="form-control" rows="4" cols="50"></textarea>
+                <label for="burger-request">Enter your favorit burger.</lable>
             </div>
+            <button id="submitBtn" type="submit" class="btn btn-info">Submit</button>
 
-            <button id="submit" type="submit" class="btn btn-info">Submit</button>
-            <p>Enter your favorit burger and click "Submit".</p>
         </form>
 
-        <div class="burger-list">
-            <ul>
-                {{#each burgers}}
-                    {{#if sleepy}}
-                        {{> cats/cat-block sleep=false}}
+        <div class="display-area">
+
+                <ul class="burger-ready">
+                    {{#each burgers}}
+                    <li class="burger-item" id="{{id}}" data-devoured="{{devoured}}">
+                        {{id}}. {{burger_name}}
+
+                        <button class="devourBtn btn btn-success" data-id="{id}">Devour it!</button>
+                    </li>
+                    {{/each}}
+                </ul>
+
+
+                <ul class="burger-devoured">
+                    {{#each burgers}}
+                    {{#if devoured}}
+                            <li class="burger-item">
+                                {{id}}. {{burger_name}}
+                            </li>
                     {{/if}}
-                {{/each}}
-            </ul>
+                    {{/each}}
+                </ul>
+
         </div>
 
     </div>    
