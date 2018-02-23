@@ -19,11 +19,13 @@
 
                 <ul class="burger-ready">
                     {{#each burgers}}
+                    {{#unless devoured}}
                     <li class="burger-item" id="{{id}}" data-devoured="{{devoured}}">
                         {{id}}. {{burger_name}}
 
-                        <button class="devourBtn btn btn-success" data-id="{id}">Devour it!</button>
+                        <button class="devourBtn btn btn-success" data-id="{{id}}">Devour it!</button>
                     </li>
+                    {{/unless}}
                     {{/each}}
                 </ul>
 
@@ -31,8 +33,9 @@
                 <ul class="burger-devoured">
                     {{#each burgers}}
                     {{#if devoured}}
-                            <li class="burger-item">
+                            <li class="burger-item" data-id="{{id}}">
                                 {{id}}. {{burger_name}}
+                                <span class="delete glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
                             </li>
                     {{/if}}
                     {{/each}}

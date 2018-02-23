@@ -46,7 +46,7 @@ router.put("/api/burgers/:id", function(req, res) {
 
 router.delete("/api/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
-
+console.log(condition);
   burger.delete(condition, function(result) {
     if (result.affectedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404

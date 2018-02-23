@@ -3,17 +3,17 @@ $(function() {
     $(".devourBtn").on("click", function(event) {
       var id = $(this).data("id");
   
-      var isDevoured = {
+      var didAte = {
         devoured: 1
       };
   
       // Send the PUT request.
       $.ajax("/api/burgers/" + id, {
         type: "PUT",
-        data: isDevoured
+        data: didAte
       }).then(
         function() {
-          console.log("changed devoured to", isDevoured);
+          console.log("changed devoured to didAte");
           // Reload the page to get the updated list
           location.reload();
         }
@@ -41,19 +41,18 @@ $(function() {
       );
     });
   
-    // comment out for now
-    // $(".delete").on("click", function(event) {
-    //   var id = $(this).data("id");
+    $(".delete").on("click", function(event) {
+      var id = $(this).parent().data("id");
   
-    //   // Send the DELETE request.
-    //   $.ajax("/api/burgers/" + id, {
-    //     type: "DELETE",
-    //   }).then(
-    //     function() {
-    //       console.log("deleted burger", id);
-    //       // Reload the page to get the updated list
-    //       location.reload();
-    //     }
-    //   );
-    // });
+    //   Send the DELETE request.
+      $.ajax("/api/burgers/" + id, {
+        type: "DELETE",
+      }).then(
+        function() {
+          console.log("deleted burger", id);
+          // Reload the page to get the updated list
+          location.reload();
+        }
+      );
+    });
   });
