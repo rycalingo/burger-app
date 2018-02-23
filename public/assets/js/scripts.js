@@ -1,6 +1,6 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
-    $(".change-sleep").on("click", function(event) {
+    $(".devourBtn").on("click", function(event) {
       var id = $(this).data("id");
   
       var isDevoured = {
@@ -23,25 +23,26 @@ $(function() {
     $(".create-form").on("submit", function(event) {
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
-  
       var newBurger = {
-        burger_name: $("#burger-request").val().trim()
+        burger: $("#burger-request").val().trim()
       };
-  
+      console.log(newBurger);
+
       // Send the POST request.
       $.ajax("/api/burgers", {
         type: "POST",
         data: newBurger
       }).then(
         function() {
-          console.log("created new burger");
+          console.log("created new burger" + newBurger);
           // Reload the page to get the updated list
           location.reload();
         }
       );
     });
   
-    // $(".delet").on("click", function(event) {
+    // comment out for now
+    // $(".delete").on("click", function(event) {
     //   var id = $(this).data("id");
   
     //   // Send the DELETE request.
